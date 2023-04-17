@@ -1,24 +1,56 @@
+require("dotenv").config();
+const createError = require("http-errors");
 const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+
+const logger = require("morgan");
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const apiRouter = require("./routes/api");
+
 const app = express();
-const port = 3210;
+
+console.log("process.env.SECRET_KEY: ", process.env.SECRET_KEY);
+let cnt = 0;
+let cnt404 = 0;
+let cnt500 = 0;
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 //
-app.use((req, res, next) => {
-  console.log("Наше промежуточное ПО");
+app.use(function (req, res, next) {
+  console.log("cnt++: ", cnt++);
   next();
 });
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/api", apiRouter);
 
-app.get("/", (rec, res) => {
-  res.send("<h1>hello IoT world</h1>");
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  console.log("cnt404: ", cnt404++);
+  next(createError(404));
 });
 
-app.get("/contact", (req, res) => {
-  res.send("<h1>Contact page</h1>");
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+  console.log("cnt500: ", cnt500++);
 });
 
-app.get("/contact/:id", (req, res) => {
-  res.send(`<h1>Contact</h1> Параметр: ${req.params.id}`);
-});
-
-app.listen(port, () => {
-  console.log("server started!");
-});
+module.exports = app;
