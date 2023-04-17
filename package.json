@@ -1,23 +1,23 @@
 {
-  "name": "iot_server",
-  "version": "1.0.0",
-  "description": "server for esp device",
-  "main": "index.js",
+  "name": "iotserver",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "test",
-"start": "node app.js"
+    "start": "nodemon ./bin/www",
+    "start:dev": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TkachAn/Iot_server.git"
-  },
-  "author": "An Drey",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TkachAn/Iot_server/issues"
-  },
-  "homepage": "https://github.com/TkachAn/Iot_server#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "nanoid": "^3.3.6",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
