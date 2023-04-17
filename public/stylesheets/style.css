@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+form {
+  display: flex;
+  flex-direction: column;
+	padding: 20px;
+  width: 400px;
+	border-color: #00B7FF;
+	
+}
+
+input,
+button {
+	padding: 5px;
+  margin-bottom: 15px;
+}
+P{
+	/* padding: 5px; */
+}
