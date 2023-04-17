@@ -1,0 +1,85 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "name": "fol",
+      "description": "esp8266 BME280 temp, humi, press",
+      "owner": 1,
+      "type": "sensor",
+      "map": "external sensor southwest"
+    },
+    {
+      "id": 2,
+      "name": "for",
+      "description": "esp8266 DHT11 temp, humi",
+      "owner": 1,
+      "type": "sensor",
+      "map": "internal sensor kuchen"
+    },
+    {
+      "id": 3,
+      "name": "Lor",
+      "description": "esp8266 water inlet valve relay (clapan)",
+      "owner": 2,
+      "type": "relay"
+    },
+    {
+      "id": 4,
+      "name": "Lor",
+      "description": "esp8266 water inlet valve servo ",
+      "owner": 2,
+      "type": "servo"
+    },
+    {
+      "id": 5,
+      "name": "Lor",
+      "description": "esp8266 water inlet valve relay (clapan)",
+      "owner": 1,
+      "type": "relay"
+    },
+    {
+      "id": 6,
+      "name": "fol",
+      "description": "esp8266 BME280 temp, humi, press",
+      "owner": 1,
+      "type": "sensor",
+      "map": "external sensor northeast"
+    },
+    {
+      "id": 7,
+      "name": "fol",
+      "description": "esp8266 BME280 temp, humi, press",
+      "owner": 1,
+      "type": "sensor",
+      "map": "internal sensor center"
+    },
+    {
+      "id": 8,
+      "name": "for",
+      "description": "esp8266 gs56711 gas",
+      "owner": 2,
+      "type": "sensor",
+      "map": "internal sensor kuchen"
+    },
+    {
+      "id": 9,
+      "name": "lom",
+      "description": "esp8266 lem34 light",
+      "owner": 2,
+      "type": "sensor",
+      "map": "internal sensor kuchen"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "nic": "Drey",
+      "email": "TkachAndrey@i.ua"
+    },
+    {
+      "id": 2,
+      "nic": "Andrey",
+      "email": "4ndrey.tkachenko@gmail.com"
+    }
+  ]
+}
