@@ -3,20 +3,8 @@ const router = express.Router();
 const {v4: uuidv4} = require("uuid");
 // console.log("uuidv4(4): ", uuidv4());
 const db = require("../../db/db.json");
-// const nanoid = require("../node_modules/nanoid");
-// console.log("db.devices: ", db.devices);
-// console.log("db.users: ", db.users);
 const users = db.users;
 const devices = db.devices;
-
-// const numId = [];
-// for (const i of tasks) {
-// 	numId.push(i.id);
-// }
-// console.log("numId: ", numId);
-// const {id}=tasks
-//  const nid = Math.max.apply(null, numId)+1;//Math.max(numId);//getMaxOfArray(numId);//
-// console.log("nid: ", nid);
 
 router.get("/tasks", (req, res, next) => {
   res.json({
