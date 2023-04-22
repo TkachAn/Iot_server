@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const URL = 'mongodb://localhost:27017/box';
+// const URL = 'mongodb://localhost:27017/box';
 let dbConnection;
 module.exports = {
 	connectToDb: (cb) => {
