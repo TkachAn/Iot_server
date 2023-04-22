@@ -5,6 +5,11 @@ const {v4: uuidv4} = require("uuid");
 const db = require("../../db/db.json");
 // console.log("db.devices: ", db.devices);
 const devices = db.devices;
+const mongoose = require('mongoose');
+const DB_HOST = "mongodb://localhost:27017/box";
+mongoose.connect(DB_HOST)
+	.then(() => console.log("CONNECT!!!: "))
+	.catch((error) => console.log("error: ", error));
 
 
 router.get("/", (req, res, next) => {
